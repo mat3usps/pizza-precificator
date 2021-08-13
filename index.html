@@ -5,26 +5,38 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Pizza-Precificator</title>
+        <link rel="stylesheet" href="./assets/CSS/style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
     </head>
     <body>
         <header>
-            <h1>Pizza-Precificator</h1>
+            <div class="p-2">
+                <nav class="d-flex align-items-center px-3">
+                    <img class="m-1" src="./assets/images/pizza-precificator.png" alt="Pizza" />
+                    <h1>Pizza-Precificator</h1>
+                </nav>
+            </div>
         </header>
-        <main>
-            <div>
-                <h3>Saiba o real valor da sua pizza! Centimetro por centimetro.</h3>
+        <main class="p-3" style="background-color: #a5a29a">
+            <div class="p-3 text-center">
+                <h4>Saiba o real valor da sua pizza! Centimetro por centimetro.</h3>
                 <p>
                     O Pizza-Precificator veio para detalhar o preço da sua pizza por cm². Dessa forma você tem uma real
                     ideia do valor de cada opção no cardápio. Teste já! Adicione duas ou mais pizzas de tamanhos
                     diferentes e conheça você mesmo quanto vale cada dentada.
                 </p>
             </div>
-            <div>
-                <form id="form-1" action="ET">
+            <div class="d-flex">
+                <form  class="m-3 p-2" id="form-1" action="GET">
                     <h3>Pizza 1</h3>
                     <div>
                         <h4>Categoria</h4>
-                        <input id="categoria1" list="categorias" type="text" />
+                        <input class="form-control" id="categoria1" list="categorias" type="text" />
                         <datalist id="categorias">
                             <option value="B">Broto</option>
                             <option value="P">Pequena</option>
@@ -33,19 +45,19 @@
                             <option value="F">Família</option>
                         </datalist>
 
-                        <h4>Tamanho(em cm)</h4>
-                        <input type="number" />
+                        <h4>Tamanho(cm)</h4>
+                        <input class="form-control" type="number" />
 
                         <h4>Valor</h4>
-                        <input type="number" step="0.01" />
+                        <input class="form-control" type="number" step="0.01" />
                     </div>
                 </form>
 
-                <form id="form-2" action="GET">
+                <form class="m-3 p-2" id="form-1" action="GET">
                     <h3>Pizza 2</h3>
                     <div>
                         <h4>Categoria</h4>
-                        <input list="categorias" type="text" />
+                        <input class="form-control" list="categorias" type="text" />
                         <datalist id="categorias">
                             <option value="B">Broto</option>
                             <option value="P">Pequena</option>
@@ -54,18 +66,28 @@
                             <option value="F">Família</option>
                         </datalist>
 
-                        <h4>Tamanho(em cm)</h4>
-                        <input type="number" />
+                        <h4>Tamanho(cm)</h4>
+                        <input class="form-control" type="number" />
 
                         <h4>Valor</h4>
-                        <input type="number" step="0.01" />
+                        <input class="form-control" type="number" step="0.01" />
                     </div>
                 </form>
+
+                <div class="d-flex flex-column justify-content-center">
+                    <button class="rounded-circle m-1" type="button">
+                        <h1 class="m-0">+</h1>
+                        <img class="mx-3" src="./assets/images/pizza-precificator.png" alt="Pizza" />
+                    </button>
+                </div>
             </div>
 
             <div>
-                <button type="button">Adicionar Pizza</button>
-                <button type="button">Estatísticas</button>
+
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button class="rounded m-1" type="button">Precificar Pizzas</button>
             </div>
         </main>
 

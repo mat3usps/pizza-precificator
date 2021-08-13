@@ -1,0 +1,31 @@
+header div {
+    background-color: #61120e;
+}
+
+nav {
+    color: #eca442;
+    background-color: #ca2521;
+    border-radius: 15px;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+}
+
+form {
+    color: #eca442;
+    border: solid 5px #61120e;
+    background-color: #ca2521;
+    border-radius: 10px;
+}
+
+form + button {
+    height: 125px;
+}
+
+button {
+    color: #eca442;
+    border: solid 5px #61120e;
+    background-color: #ca2521;
+}
