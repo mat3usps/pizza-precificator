@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pizza-Precificator</title>
+    </head>
+    <body>
+        <header>
+            <h1>Pizza-Precificator</h1>
+        </header>
+        <main>
+            <div>
+                <h3>Saiba o real valor da sua pizza! Centimetro por centimetro.</h3>
+                <p>
+                    O Pizza-Precificator veio para detalhar o preço da sua pizza por cm². Dessa forma você tem uma real
+                    ideia do valor de cada opção no cardápio. Teste já! Adicione duas ou mais pizzas de tamanhos
+                    diferentes e conheça você mesmo quanto vale cada dentada.
+                </p>
+            </div>
+            <div>
+                <form id="form-1" action="ET">
+                    <h3>Pizza 1</h3>
+                    <div>
+                        <h4>Categoria</h4>
+                        <input id="categoria1" list="categorias" type="text" />
+                        <datalist id="categorias">
+                            <option value="B">Broto</option>
+                            <option value="P">Pequena</option>
+                            <option value="M">Média</option>
+                            <option value="G">Grande</option>
+                            <option value="F">Família</option>
+                        </datalist>
+
+                        <h4>Tamanho(em cm)</h4>
+                        <input type="number" />
+
+                        <h4>Valor</h4>
+                        <input type="number" step="0.01" />
+                    </div>
+                </form>
+
+                <form id="form-2" action="GET">
+                    <h3>Pizza 2</h3>
+                    <div>
+                        <h4>Categoria</h4>
+                        <input list="categorias" type="text" />
+                        <datalist id="categorias">
+                            <option value="B">Broto</option>
+                            <option value="P">Pequena</option>
+                            <option value="M">Média</option>
+                            <option value="G">Grande</option>
+                            <option value="F">Família</option>
+                        </datalist>
+
+                        <h4>Tamanho(em cm)</h4>
+                        <input type="number" />
+
+                        <h4>Valor</h4>
+                        <input type="number" step="0.01" />
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <button type="button">Adicionar Pizza</button>
+                <button type="button">Estatísticas</button>
+            </div>
+        </main>
+
+        <script>
+            /*Ouvir botão*/
+            /*pegar dados*/
+            /*gerar estatísticas*/
+            /*apresentar dados*/
+        </script>
+    </body>
+</html>
