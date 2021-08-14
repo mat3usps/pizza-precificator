@@ -20,12 +20,34 @@ form {
     border-radius: 10px;
 }
 
-form + button {
-    height: 125px;
+form + div {
+    border: solid 5px rgba(97, 18, 14, 0.1);
+    background-color: rgba(202, 37, 33, 0.1);
+    border-radius: 10px;
 }
 
 button {
     color: #eca442;
     border: solid 5px #61120e;
     background-color: #ca2521;
+}
+
+.add {
+    transition: 0.5s;
+}
+
+.add:hover {
+    transform: scale(1.1);
+}
+
+.remove {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: -30px;
+    transition: 0.5s;
+}
+
+.remove:hover {
+    transform: scale(1.1);
 }
