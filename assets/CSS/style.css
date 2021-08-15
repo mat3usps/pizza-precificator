@@ -32,6 +32,25 @@ button {
     background-color: #ca2521;
 }
 
+div div div {
+    color: #eca442;
+    background-color: #ca2521;
+}
+
+#pizzaDetail {
+    background-color: #61120e;
+    left: 10%;
+    top: 15%;
+    width: 80vw;
+    display: none;
+}
+
+#botaoFechar {
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+}
+
 .add {
     transition: 0.5s;
 }
@@ -43,11 +62,29 @@ button {
 .remove {
     width: 40px;
     height: 40px;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: -30px;
     transition: 0.5s;
 }
 
 .remove:hover {
     transform: scale(1.1);
+}
+
+.golden {
+    border: solid #eca442 2px;
+}
+
+footer {
+    background-color: #61120e;
+}
+
+footer p {
+    color: #eca442;
+    background-color: #ca2521;
+}
+
+footer div div {
+    color: #eca442;
+    background-color: #ca2521;
 }
