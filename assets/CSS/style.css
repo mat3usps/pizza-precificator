@@ -37,6 +37,10 @@ div div div {
     background-color: #ca2521;
 }
 
+a {
+    text-decoration: none;
+}
+
 #pizzaDetail {
     background-color: #61120e;
     left: 10%;

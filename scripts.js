@@ -114,50 +114,51 @@ botaoPrecificar.addEventListener("click", function (event) {
 function precificacao(pizzas) {
     let pizzasPrecificadas = [];
 
+    let numero = 1;
+
     pizzas.forEach((pizza) => {
         const raio = pizza.tamanho / 2;
         const area = 3.14 * raio ** 2;
         const relacao = pizza.valor / area;
-        const precificacao = `${relacao.toFixed(2)}`;
-        pizzasPrecificadas.push({ ...pizza, relacao, precificacao });
-    });
+        let precificacao = `≅ R$ ${relacao.toFixed(2)}`;
 
-    const pizzaReferencia = pizzasPrecificadas[0];
-
-    if (pizzasPrecificadas.length === 1) {
-        return { ...pizzaReferencia, diferenca: " - " };
-    }
-
-    let pizzasDiferenciadas = [];
-    let numero = 1;
-
-    pizzasPrecificadas.forEach((pizza) => {
-        const resultadoDaDiferenca = (pizza.relacao / pizzaReferencia.relacao) * 100;
-
-        let baratoOuCaro = "Pizza Referência";
-
-        if (numero > 1) {
-            if (resultadoDaDiferenca === 100) {
-                baratoOuCaro = "igual à 1ª";
-            } else if (resultadoDaDiferenca < 100) {
-                baratoOuCaro = "mais barata que a 1ª";
-            } else if (resultadoDaDiferenca > 100) {
-                baratoOuCaro = "mais cara que a 1ª";
-            }
-
-            if (baratoOuCaro === "Pizza Referência") {
-                baratoOuCaro = " - ";
-            }
+        if (isNaN(relacao)) {
+            precificacao = " - ";
         }
 
-        pizzasDiferenciadas.push({
-            numero: numero,
-            ...pizza,
-            diferenca: baratoOuCaro,
-        });
+        pizzasPrecificadas.push({ numero, ...pizza, relacao, precificacao });
 
         numero++;
     });
+
+    if (pizzasPrecificadas.length === 1) {
+        return [{ ...pizzasPrecificadas[0], diferenca: " - " }];
+    }
+
+    pizzasPrecificadas.sort((a, b) => {
+        return a.relacao - b.relacao;
+    });
+
+    const pizzasDiferenciadas = [];
+
+    for (let i = 0; i < pizzasPrecificadas.length; i++) {
+        if (i === 0) {
+            pizzasDiferenciadas.push({ ...pizzasPrecificadas[i], diferenca: "Melhor custo-benefício" });
+        } else {
+            const variacaoPercentual = (pizzasPrecificadas[i].relacao * 100) / pizzasPrecificadas[i - 1].relacao - 100;
+
+            let diferenca = `+ ${variacaoPercentual.toFixed(0)}%`;
+
+            if (isNaN(variacaoPercentual)) {
+                diferenca = " - ";
+            }
+
+            pizzasDiferenciadas.push({
+                ...pizzasPrecificadas[i],
+                diferenca,
+            });
+        }
+    }
 
     return pizzasDiferenciadas;
 }
@@ -167,9 +168,10 @@ function organizaLinha(pizza) {
     row.className = "d-flex py-2 px-1 row justify";
 
     const values = Object.values(pizza);
-    values.splice(4, 1); // exclusão da relação
 
-    if (values[5].includes("barata")) {
+    values.splice(4, 1); // exclusão da relação preço/cm²
+
+    if (values[5].includes("Melhor")) {
         row.className = "d-flex py-2 px-1 row justify rounded golden";
     }
 
